@@ -374,7 +374,7 @@
           <table class="w-full text-sm">
             <thead>
               <tr class="border-b border-white/10">
-                <th class="text-left py-2 px-3 text-slate-400 font-medium">AQI Index</th>
+                <th class="text-left py-2 px-3 text-slate-400 font-medium">AQI Range</th>
                 <th class="text-left py-2 px-3 text-slate-400 font-medium">Category</th>
                 <th class="text-left py-2 px-3 text-slate-400 font-medium">PM2.5 (µg/Nm³) 24-hr</th>
                 <th class="text-left py-2 px-3 text-slate-400 font-medium">PM10 (µg/Nm³) 24-hr</th>
@@ -382,45 +382,45 @@
             </thead>
             <tbody class="text-slate-300">
               <tr class="border-b border-white/5 bg-green-500/5">
-                <td class="py-2 px-3 font-mono">0–25</td>
+                <td class="py-2 px-3 font-mono">0–50</td>
                 <td class="py-2 px-3 font-medium text-green-400">Good</td>
-                <td class="py-2 px-3">0–25</td>
+                <td class="py-2 px-3">0.0–25.0</td>
                 <td class="py-2 px-3">0–54</td>
               </tr>
               <tr class="border-b border-white/5 bg-yellow-500/5">
-                <td class="py-2 px-3 font-mono">25.1–35</td>
+                <td class="py-2 px-3 font-mono">51–100</td>
                 <td class="py-2 px-3 font-medium text-yellow-400">Fair</td>
-                <td class="py-2 px-3">25.1–35</td>
+                <td class="py-2 px-3">25.1–35.0</td>
                 <td class="py-2 px-3">55–154</td>
               </tr>
               <tr class="border-b border-white/5 bg-orange-500/5">
-                <td class="py-2 px-3 font-mono">35.1–45</td>
+                <td class="py-2 px-3 font-mono">101–150</td>
                 <td class="py-2 px-3 font-medium text-orange-400">Unhealthy for Sensitive Groups</td>
-                <td class="py-2 px-3">35.1–45</td>
+                <td class="py-2 px-3">35.1–45.0</td>
                 <td class="py-2 px-3">155–254</td>
               </tr>
               <tr class="border-b border-white/5 bg-red-500/5">
-                <td class="py-2 px-3 font-mono">45.1–55</td>
+                <td class="py-2 px-3 font-mono">151–200</td>
                 <td class="py-2 px-3 font-medium text-red-400">Very Unhealthy</td>
-                <td class="py-2 px-3">45.1–55</td>
+                <td class="py-2 px-3">45.1–55.0</td>
                 <td class="py-2 px-3">255–354</td>
               </tr>
               <tr class="border-b border-white/5 bg-purple-700/5">
-                <td class="py-2 px-3 font-mono">55.1–90</td>
+                <td class="py-2 px-3 font-mono">201–300</td>
                 <td class="py-2 px-3 font-medium text-purple-300">Acutely Unhealthy</td>
-                <td class="py-2 px-3">55.1–90</td>
+                <td class="py-2 px-3">55.1–90.0</td>
                 <td class="py-2 px-3">355–424</td>
               </tr>
               <tr class="bg-red-900/10">
-                <td class="py-2 px-3 font-mono">91+</td>
+                <td class="py-2 px-3 font-mono">301+</td>
                 <td class="py-2 px-3 font-medium text-red-300">Emergency</td>
-                <td class="py-2 px-3">91+</td>
-                <td class="py-2 px-3">425–504</td>
+                <td class="py-2 px-3">&gt; 90.0</td>
+                <td class="py-2 px-3">425–504+</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p class="text-slate-500 text-xs mt-2">Sources: DAO 2020-14 (PM2.5), DAO 2013-13 (PM10), DENR EMB Procedural Manual on Data Handling Protocols 2021.</p>
+        <p class="text-slate-500 text-xs mt-2">Sources: DAO 2020-14 (PM2.5), DAO 2013-13 (PM10), DENR EMB Procedural Manual on Data Handling Protocols.</p>
       </div>
 
       <div class="bg-slate-700/20 rounded-lg p-4 border-l-2 border-emerald-400 mb-4">
@@ -433,14 +433,7 @@
       <div class="bg-slate-700/20 rounded-lg p-4 border-l-2 border-blue-400 mb-4">
         <p class="text-slate-300 text-sm">
           <span class="font-semibold text-blue-400">How Overall AQI is Calculated:</span>
-          The DENR AQI is computed separately for each pollutant via linear interpolation of the raw concentration against the breakpoint table. The highest individual sub-index determines the overall reported AQI (the "maximum operator" method per DENR EMB Procedural Manual MC 2021-07).
-        </p>
-      </div>
-
-      <div class="bg-slate-700/20 rounded-lg p-4 border-l-2 border-yellow-400">
-        <p class="text-slate-300 text-sm">
-          <span class="font-semibold text-yellow-400">⚠ Note on AQI Scale:</span>
-          The DENR EMB AQI uses a <strong>0–91+ concentration-based scale</strong> — not the US EPA 0–500 scale. A DENR AQI of 25 means "Good," while a value above 91 is "Emergency." This is a distinct Philippine standard and values cannot be directly compared to US AQI numbers.
+          The DENR AQI is computed separately for each pollutant via linear interpolation of the raw concentration against the breakpoint table. The highest individual sub-index determines the overall reported AQI (the "maximum operator" method).
         </p>
       </div>
     </div>
@@ -476,11 +469,11 @@
           </div>
         </div>
         <div class="mt-4">
-          <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden">
-            <div id="pm25-bar" class="h-full bg-gradient-to-r from-green-400 to-green-500 rounded-full transition-all duration-500" style="width:0%"></div>
+          <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden relative">
+            <div id="pm25-bar" class="absolute top-0 left-0 h-full bg-gradient-to-r from-green-400 to-green-500 rounded-full transition-all duration-500" style="width:0%"></div>
           </div>
           <div class="flex justify-between text-xs text-slate-600 mt-1">
-            <span>0</span><span>Good</span><span>Fair</span><span>USG</span><span>91+</span>
+            <span>0</span><span>50</span><span>100</span><span>150</span><span>300+</span>
           </div>
         </div>
       </div>
@@ -514,11 +507,11 @@
           </div>
         </div>
         <div class="mt-4">
-          <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden">
-            <div id="pm10-bar" class="h-full bg-gradient-to-r from-green-400 to-green-500 rounded-full transition-all duration-500" style="width:0%"></div>
+          <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden relative">
+            <div id="pm10-bar" class="absolute top-0 left-0 h-full bg-gradient-to-r from-green-400 to-green-500 rounded-full transition-all duration-500" style="width:0%"></div>
           </div>
           <div class="flex justify-between text-xs text-slate-600 mt-1">
-            <span>0</span><span>Good</span><span>Fair</span><span>USG</span><span>91+</span>
+            <span>0</span><span>50</span><span>100</span><span>150</span><span>300+</span>
           </div>
         </div>
       </div>
@@ -586,32 +579,32 @@
 
     <div class="glass-card rounded-xl p-4">
       <div class="text-xs text-slate-500 uppercase tracking-wider mb-3">
-        DENR EMB AQI Scale (DAO 2020-14 / DAO 2013-13)
+        Air Quality Health Guide (DENR-EMB)
       </div>
       <div class="flex flex-wrap gap-2">
         <div class="flex items-center gap-2 px-3 py-1.5 rounded-full" style="background: rgba(0, 228, 0, 0.1);">
           <div class="w-2 h-2 rounded-full" style="background: #00E400;"></div>
-          <span class="text-xs text-slate-300">0–25 Good</span>
+          <span class="text-xs text-slate-300">1–50 Good</span>
         </div>
         <div class="flex items-center gap-2 px-3 py-1.5 rounded-full" style="background: rgba(255, 255, 0, 0.1);">
           <div class="w-2 h-2 rounded-full" style="background: #FFFF00;"></div>
-          <span class="text-xs text-slate-300">25.1–35 Fair</span>
+          <span class="text-xs text-slate-300">51–100 Fair</span>
         </div>
         <div class="flex items-center gap-2 px-3 py-1.5 rounded-full" style="background: rgba(255, 126, 0, 0.1);">
           <div class="w-2 h-2 rounded-full" style="background: #FF7E00;"></div>
-          <span class="text-xs text-slate-300">35.1–45 Unhealthy (SG)</span>
+          <span class="text-xs text-slate-300">101–150 Unhealthy (SG)</span>
         </div>
         <div class="flex items-center gap-2 px-3 py-1.5 rounded-full" style="background: rgba(255, 0, 0, 0.1);">
           <div class="w-2 h-2 rounded-full" style="background: #FF0000;"></div>
-          <span class="text-xs text-slate-300">45.1–55 Very Unhealthy</span>
+          <span class="text-xs text-slate-300">151–200 Very Unhealthy</span>
         </div>
         <div class="flex items-center gap-2 px-3 py-1.5 rounded-full" style="background: rgba(143, 63, 151, 0.1);">
           <div class="w-2 h-2 rounded-full" style="background: #8F3F97;"></div>
-          <span class="text-xs text-slate-300">55.1–90 Acutely Unhealthy</span>
+          <span class="text-xs text-slate-300">201–300 Acutely Unhealthy</span>
         </div>
         <div class="flex items-center gap-2 px-3 py-1.5 rounded-full" style="background: rgba(126, 0, 35, 0.1);">
           <div class="w-2 h-2 rounded-full" style="background: #7E0023;"></div>
-          <span class="text-xs text-slate-300">91+ Emergency</span>
+          <span class="text-xs text-slate-300">301+ Emergency</span>
         </div>
       </div>
     </div>
@@ -619,7 +612,7 @@
     <footer class="mt-6 text-center">
       <p class="text-slate-600 text-xs">
         24-hour rolling averages per DENR EMB DAO 2020-14 &amp; DAO 2013-13 standards •
-        Data updates every 30 seconds • DENR AQI scale: 0–91+
+        Data updates every 30 seconds
       </p>
     </footer>
 
@@ -627,22 +620,25 @@
 </div>
 
 <script>
+  // ─────────────────────────────────────────────────────────────────────────
+  // PM2.5 and PM10 Breakpoints mapped to the standard 0-500 AQI Index Scale
+  // ─────────────────────────────────────────────────────────────────────────
   const PM25_BREAKPOINTS = [
-    { aqiLo:  0,    aqiHi: 25,   cLo:  0,    cHi: 25   },
-    { aqiLo: 25.1, aqiHi: 35,   cLo: 25.1,  cHi: 35   },
-    { aqiLo: 35.1, aqiHi: 45,   cLo: 35.1,  cHi: 45   },
-    { aqiLo: 45.1, aqiHi: 55,   cLo: 45.1,  cHi: 55   },
-    { aqiLo: 55.1, aqiHi: 90,   cLo: 55.1,  cHi: 90   },
-    { aqiLo: 91,   aqiHi: 999,  cLo: 91,    cHi: 9999 },
+    { aqiLo:   0, aqiHi:  50, cLo:    0, cHi:   25 },
+    { aqiLo:  51, aqiHi: 100, cLo: 25.1, cHi:   35 },
+    { aqiLo: 101, aqiHi: 150, cLo: 35.1, cHi:   45 },
+    { aqiLo: 151, aqiHi: 200, cLo: 45.1, cHi:   55 },
+    { aqiLo: 201, aqiHi: 300, cLo: 55.1, cHi:   90 },
+    { aqiLo: 301, aqiHi: 400, cLo:   91, cHi: 9999 }, 
   ];
 
   const PM10_BREAKPOINTS = [
-    { aqiLo:  0,    aqiHi: 25,   cLo:   0,   cHi: 54   },
-    { aqiLo: 25.1, aqiHi: 35,   cLo:  55,   cHi: 154  },
-    { aqiLo: 35.1, aqiHi: 45,   cLo: 155,   cHi: 254  },
-    { aqiLo: 45.1, aqiHi: 55,   cLo: 255,   cHi: 354  },
-    { aqiLo: 55.1, aqiHi: 90,   cLo: 355,   cHi: 424  },
-    { aqiLo: 91,   aqiHi: 999,  cLo: 425,   cHi: 9999 },
+    { aqiLo:   0, aqiHi:  50, cLo:    0, cHi:   54 },
+    { aqiLo:  51, aqiHi: 100, cLo:   55, cHi:  154 },
+    { aqiLo: 101, aqiHi: 150, cLo:  155, cHi:  254 },
+    { aqiLo: 151, aqiHi: 200, cLo:  255, cHi:  354 },
+    { aqiLo: 201, aqiHi: 300, cLo:  355, cHi:  424 },
+    { aqiLo: 301, aqiHi: 400, cLo:  425, cHi: 9999 }, 
   ];
 
   function calcDENRAQI(concentration, breakpoints) {
@@ -651,15 +647,15 @@
       if (concentration >= bp.cLo && concentration <= bp.cHi) {
         const aqi = ((bp.aqiHi - bp.aqiLo) / (bp.cHi - bp.cLo)) *
                     (concentration - bp.cLo) + bp.aqiLo;
-        return Math.round(aqi * 10) / 10;
+        return Math.round(aqi);
       }
     }
-    return 91;
+    return 301; // Emergency default fallback if somehow missed
   }
 
   function getDENRCategory(aqi) {
     if (aqi === null) return null;
-    if (aqi <= 25)  return {
+    if (aqi <= 50)  return {
       key: 'good',
       status: 'Good',
       cardClass: 'aqi-good',
@@ -669,7 +665,7 @@
       fairText: false,
       message: 'None',
     };
-    if (aqi <= 35)  return {
+    if (aqi <= 100)  return {
       key: 'fair',
       status: 'Fair',
       cardClass: 'aqi-fair',
@@ -679,7 +675,7 @@
       fairText: true, 
       message: 'None',
     };
-    if (aqi <= 45)  return {
+    if (aqi <= 150)  return {
       key: 'unhealthySensitive',
       status: 'Unhealthy for Sensitive Groups',
       cardClass: 'aqi-unhealthy-sensitive',
@@ -687,9 +683,9 @@
       barClass: 'from-[#FF7E00] to-[#cc6500]',
       barColor: '#FF7E00',
       fairText: false,
-      message: 'People with respiratory disease, such as asthma, should limit outdoor exertion.',
+      message: 'People with respiratory diseases, such as asthma, should limit outdoor exertion.',
     };
-    if (aqi <= 55)  return {
+    if (aqi <= 200)  return {
       key: 'veryUnhealthy',
       status: 'Very Unhealthy',
       cardClass: 'aqi-very-unhealthy',
@@ -699,7 +695,7 @@
       fairText: false,
       message: 'Pedestrians should avoid heavy traffic areas. People with heart or respiratory disease, such as asthma, should stay indoors and rest as much as possible. Unnecessary trips should be postponed. People should voluntarily restrict the use of vehicles.',
     };
-    if (aqi <= 90)  return {
+    if (aqi <= 300)  return {
       key: 'acutelyUnhealthy',
       status: 'Acutely Unhealthy',
       cardClass: 'aqi-acutely-unhealthy',
@@ -707,7 +703,7 @@
       barClass: 'from-[#8F3F97] to-[#682c6e]',
       barColor: '#8F3F97',
       fairText: false,
-      message: 'People should limit outdoor exertion. People with heart or respiratory disease, such as asthma, should stay indoors and rest as much as possible. Unnecessary trips should be postponed. Motor vehicle use may be restricted. Industrial activities may be curtailed.',
+      message: 'People should limit outdoor exertion. People with heart or respiratory disease, should stay indoors as much as possible. Unnecessary trips should be postponed. Motor vehicle use may be restricted. Industrial activities may be curtailed.',
     };
     return {
       key: 'emergency',
@@ -725,28 +721,28 @@
   const AQI_RECOMMENDATIONS = {
     good: {
       color: '#00E400',
-      label: 'Good (AQI 0–25)',
+      label: 'Good (AQI 1–50)',
       items: [
         { icon: '✅', text: 'Air pollution poses little or no risk.' },
       ],
     },
     fair: {
       color: '#FFFF00',
-      label: 'Fair (AQI 25.1–35)',
+      label: 'Fair (AQI 51–100)',
       items: [
         { icon: '✅', text: 'Air pollution poses little or no risk.' },
       ],
     },
     unhealthySensitive: {
       color: '#FF7E00',
-      label: 'Unhealthy for Sensitive Groups (AQI 35.1–45)',
+      label: 'Unhealthy for Sensitive Groups (AQI 101–150)',
       items: [
         { icon: '🫁', text: 'People with respiratory diseases such as asthma should limit outdoor exertion.' },
       ],
     },
     veryUnhealthy: {
       color: '#FF0000',
-      label: 'Very Unhealthy (AQI 45.1–55)',
+      label: 'Very Unhealthy (AQI 151–200)',
       items: [
         { icon: '🚶', text: 'Pedestrians should avoid heavy traffic areas.' },
         { icon: '❤️', text: 'People with heart or respiratory disease, such as asthma, should stay indoors and rest as much as possible.' },
@@ -756,10 +752,10 @@
     },
     acutelyUnhealthy: {
       color: '#8F3F97',
-      label: 'Acutely Unhealthy (AQI 55.1–90)',
+      label: 'Acutely Unhealthy (AQI 201–300)',
       items: [
         { icon: '🚨', text: 'People should limit outdoor exertion.' },
-        { icon: '❤️', text: 'People with heart or respiratory disease, such as asthma, should stay indoors and rest as much as possible.' },
+        { icon: '❤️', text: 'People with heart or respiratory disease, should stay indoors as much as possible.' },
         { icon: '🚫', text: 'Unnecessary trips should be postponed.' },
         { icon: '🚗', text: 'Motor vehicle use may be restricted.' },
         { icon: '🏭', text: 'Industrial activities may be curtailed.' },
@@ -767,7 +763,7 @@
     },
     emergency: {
       color: '#7E0023',
-      label: 'Emergency (AQI 91+)',
+      label: 'Emergency (AQI 301+)',
       items: [
         { icon: '🚨', text: 'Everyone should remain indoors, (keeping windows and doors closed unless heat stress is possible).' },
         { icon: '🚗', text: 'Motor vehicle use should be prohibited except for emergency situations.' },
@@ -926,8 +922,8 @@
       badge.className = `px-2 py-1 rounded-full text-xs font-medium ${cat.badgeClass}`;
       badge.textContent = cat.status;
       const bar = document.getElementById('pm25-bar');
-      bar.className   = `h-full bg-gradient-to-r ${cat.barClass} rounded-full transition-all duration-500`;
-      bar.style.width = `${Math.min((pm25AQI / 91) * 100, 100)}%`;
+      bar.className   = `absolute top-0 left-0 h-full bg-gradient-to-r ${cat.barClass} rounded-full transition-all duration-500`;
+      bar.style.width = `${Math.min((pm25AQI / 400) * 100, 100)}%`; // Scaled against an upper bound of 400 for visualization
     } else {
       document.getElementById('pm25-aqi').textContent  = '--';
       document.getElementById('pm25-conc').textContent = '--';
@@ -943,8 +939,8 @@
       badge.className = `px-2 py-1 rounded-full text-xs font-medium ${cat.badgeClass}`;
       badge.textContent = cat.status;
       const bar = document.getElementById('pm10-bar');
-      bar.className   = `h-full bg-gradient-to-r ${cat.barClass} rounded-full transition-all duration-500`;
-      bar.style.width = `${Math.min((pm10AQI / 91) * 100, 100)}%`;
+      bar.className   = `absolute top-0 left-0 h-full bg-gradient-to-r ${cat.barClass} rounded-full transition-all duration-500`;
+      bar.style.width = `${Math.min((pm10AQI / 400) * 100, 100)}%`; 
     } else {
       document.getElementById('pm10-aqi').textContent  = '--';
       document.getElementById('pm10-conc').textContent = '--';
