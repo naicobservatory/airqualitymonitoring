@@ -177,7 +177,7 @@
             <div class="absolute top-full right-0 mt-2 w-52 bg-slate-800 border border-slate-700 rounded-lg p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 shadow-lg">
               <div class="text-xs text-slate-200 space-y-1">
                 <div class="font-semibold text-emerald-400 mb-2">Rapid Update Mode</div>
-                <div class="text-slate-300"><strong>OFF:</strong> 24-hour average (official DENR EMB standard)</div>
+                <div class="text-slate-300"><strong>OFF:</strong> 24-hour average</div>
                 <div class="text-slate-300"><strong>ON:</strong> Real-time instantaneous readings</div>
               </div>
               <div class="absolute top-0 right-6 w-2 h-2 bg-slate-800 border-l border-t border-slate-700 transform -rotate-45 -mt-1"></div>
@@ -204,7 +204,7 @@
           </div>
           <div class="text-right">
             <div id="main-aqi-value" class="aqi-text-adaptive mono text-6xl md:text-7xl font-bold text-white">--</div>
-            <div class="aqi-text-muted text-white/70 text-sm">DENR AQI</div>
+            <div class="aqi-text-muted text-white/70 text-sm">AQI</div>
           </div>
         </div>
         <p id="health-message" class="aqi-text-muted text-white/80 text-sm md:text-base">
@@ -365,75 +365,13 @@
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C6.5 6.253 2 10.998 2 17s4.5 10.747 10 10.747c5.5 0 10-4.998 10-10.747S17.5 6.253 12 6.253z"/>
         </svg>
-        Understanding DENR EMB AQI Levels
+        Understanding AQI Levels
       </h2>
-
-      <div class="mb-6">
-        <h3 class="font-semibold text-white mb-3">AQI Breakpoints by Pollutant (DENR EMB — DAO 2020-14)</h3>
-        <div class="overflow-x-auto">
-          <table class="w-full text-sm">
-            <thead>
-              <tr class="border-b border-white/10">
-                <th class="text-left py-2 px-3 text-slate-400 font-medium">AQI Range</th>
-                <th class="text-left py-2 px-3 text-slate-400 font-medium">Category</th>
-                <th class="text-left py-2 px-3 text-slate-400 font-medium">PM2.5 (µg/Nm³) 24-hr</th>
-                <th class="text-left py-2 px-3 text-slate-400 font-medium">PM10 (µg/Nm³) 24-hr</th>
-              </tr>
-            </thead>
-            <tbody class="text-slate-300">
-              <tr class="border-b border-white/5 bg-green-500/5">
-                <td class="py-2 px-3 font-mono">0–50</td>
-                <td class="py-2 px-3 font-medium text-green-400">Good</td>
-                <td class="py-2 px-3">0.0–25.0</td>
-                <td class="py-2 px-3">0–54</td>
-              </tr>
-              <tr class="border-b border-white/5 bg-yellow-500/5">
-                <td class="py-2 px-3 font-mono">51–100</td>
-                <td class="py-2 px-3 font-medium text-yellow-400">Fair</td>
-                <td class="py-2 px-3">25.1–35.0</td>
-                <td class="py-2 px-3">55–154</td>
-              </tr>
-              <tr class="border-b border-white/5 bg-orange-500/5">
-                <td class="py-2 px-3 font-mono">101–150</td>
-                <td class="py-2 px-3 font-medium text-orange-400">Unhealthy for Sensitive Groups</td>
-                <td class="py-2 px-3">35.1–45.0</td>
-                <td class="py-2 px-3">155–254</td>
-              </tr>
-              <tr class="border-b border-white/5 bg-red-500/5">
-                <td class="py-2 px-3 font-mono">151–200</td>
-                <td class="py-2 px-3 font-medium text-red-400">Very Unhealthy</td>
-                <td class="py-2 px-3">45.1–55.0</td>
-                <td class="py-2 px-3">255–354</td>
-              </tr>
-              <tr class="border-b border-white/5 bg-purple-700/5">
-                <td class="py-2 px-3 font-mono">201–300</td>
-                <td class="py-2 px-3 font-medium text-purple-300">Acutely Unhealthy</td>
-                <td class="py-2 px-3">55.1–90.0</td>
-                <td class="py-2 px-3">355–424</td>
-              </tr>
-              <tr class="bg-red-900/10">
-                <td class="py-2 px-3 font-mono">301+</td>
-                <td class="py-2 px-3 font-medium text-red-300">Emergency</td>
-                <td class="py-2 px-3">&gt; 90.0</td>
-                <td class="py-2 px-3">425–504+</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="text-slate-500 text-xs mt-2">Sources: DAO 2020-14 (PM2.5), DAO 2013-13 (PM10), DENR EMB Procedural Manual on Data Handling Protocols.</p>
-      </div>
-
-      <div class="bg-slate-700/20 rounded-lg p-4 border-l-2 border-emerald-400 mb-4">
-        <p class="text-slate-300 text-sm">
-          <span class="font-semibold text-emerald-400">DENR EMB 24-Hour Averaging:</span>
-          All PM2.5 and PM10 concentrations are averaged over the past 24 hours before computing the AQI. This aligns with official DENR EMB reporting standards under the Philippine Clean Air Act (RA 8749).
-        </p>
-      </div>
 
       <div class="bg-slate-700/20 rounded-lg p-4 border-l-2 border-blue-400 mb-4">
         <p class="text-slate-300 text-sm">
           <span class="font-semibold text-blue-400">How Overall AQI is Calculated:</span>
-          The DENR AQI is computed separately for each pollutant via linear interpolation of the raw concentration against the breakpoint table. The highest individual sub-index determines the overall reported AQI (the "maximum operator" method).
+          The Air Quality Index is provided directly by the environmental monitoring gateway. The highest individual sub-index (between PM2.5 and PM10) determines the overall reported AQI.
         </p>
       </div>
     </div>
@@ -450,22 +388,15 @@
               </svg>
               <span class="text-slate-400 text-sm font-medium">PM2.5</span>
             </div>
-            <div class="text-xs text-slate-500">Fine Particulate Matter (24-hr avg)</div>
+            <div class="text-xs text-slate-500">Fine Particulate Matter</div>
           </div>
           <div id="pm25-badge" class="px-2 py-1 rounded-full text-xs font-medium bg-emerald-500/20 text-emerald-400">Good</div>
         </div>
         <div class="mb-2">
-          <div class="text-slate-500 text-xs uppercase tracking-wider mb-1">DENR AQI</div>
+          <div class="text-slate-500 text-xs uppercase tracking-wider mb-1">Index Level</div>
           <div class="flex items-baseline gap-2">
             <span id="pm25-aqi" class="mono text-4xl font-bold text-white">--</span>
             <span class="text-slate-500 text-sm">AQI</span>
-          </div>
-        </div>
-        <div class="mb-1">
-          <div class="text-slate-500 text-xs uppercase tracking-wider mb-1">Concentration</div>
-          <div class="flex items-baseline gap-2">
-            <span id="pm25-conc" class="mono text-xl font-semibold text-slate-300">--</span>
-            <span class="text-slate-500 text-xs">µg/m³</span>
           </div>
         </div>
         <div class="mt-4">
@@ -488,22 +419,15 @@
               </svg>
               <span class="text-slate-400 text-sm font-medium">PM10</span>
             </div>
-            <div class="text-xs text-slate-500">Coarse Particulate Matter (24-hr avg)</div>
+            <div class="text-xs text-slate-500">Coarse Particulate Matter</div>
           </div>
           <div id="pm10-badge" class="px-2 py-1 rounded-full text-xs font-medium bg-emerald-500/20 text-emerald-400">Good</div>
         </div>
         <div class="mb-2">
-          <div class="text-slate-500 text-xs uppercase tracking-wider mb-1">DENR AQI</div>
+          <div class="text-slate-500 text-xs uppercase tracking-wider mb-1">Index Level</div>
           <div class="flex items-baseline gap-2">
             <span id="pm10-aqi" class="mono text-4xl font-bold text-white">--</span>
             <span class="text-slate-500 text-sm">AQI</span>
-          </div>
-        </div>
-        <div class="mb-1">
-          <div class="text-slate-500 text-xs uppercase tracking-wider mb-1">Concentration</div>
-          <div class="flex items-baseline gap-2">
-            <span id="pm10-conc" class="mono text-xl font-semibold text-slate-300">--</span>
-            <span class="text-slate-500 text-xs">µg/m³</span>
           </div>
         </div>
         <div class="mt-4">
@@ -611,7 +535,6 @@
 
     <footer class="mt-6 text-center">
       <p class="text-slate-600 text-xs">
-        24-hour rolling averages per DENR EMB DAO 2020-14 &amp; DAO 2013-13 standards •
         Data updates every 30 seconds
       </p>
     </footer>
@@ -620,41 +543,8 @@
 </div>
 
 <script>
-  // ─────────────────────────────────────────────────────────────────────────
-  // PM2.5 and PM10 Breakpoints mapped to the standard 0-500 AQI Index Scale
-  // ─────────────────────────────────────────────────────────────────────────
-  const PM25_BREAKPOINTS = [
-    { aqiLo:   0, aqiHi:  50, cLo:    0, cHi:   25 },
-    { aqiLo:  51, aqiHi: 100, cLo: 25.1, cHi:   35 },
-    { aqiLo: 101, aqiHi: 150, cLo: 35.1, cHi:   45 },
-    { aqiLo: 151, aqiHi: 200, cLo: 45.1, cHi:   55 },
-    { aqiLo: 201, aqiHi: 300, cLo: 55.1, cHi:   90 },
-    { aqiLo: 301, aqiHi: 400, cLo:   91, cHi: 9999 }, 
-  ];
-
-  const PM10_BREAKPOINTS = [
-    { aqiLo:   0, aqiHi:  50, cLo:    0, cHi:   54 },
-    { aqiLo:  51, aqiHi: 100, cLo:   55, cHi:  154 },
-    { aqiLo: 101, aqiHi: 150, cLo:  155, cHi:  254 },
-    { aqiLo: 151, aqiHi: 200, cLo:  255, cHi:  354 },
-    { aqiLo: 201, aqiHi: 300, cLo:  355, cHi:  424 },
-    { aqiLo: 301, aqiHi: 400, cLo:  425, cHi: 9999 }, 
-  ];
-
-  function calcDENRAQI(concentration, breakpoints) {
-    if (concentration === null || concentration === undefined) return null;
-    for (const bp of breakpoints) {
-      if (concentration >= bp.cLo && concentration <= bp.cHi) {
-        const aqi = ((bp.aqiHi - bp.aqiLo) / (bp.cHi - bp.cLo)) *
-                    (concentration - bp.cLo) + bp.aqiLo;
-        return Math.round(aqi);
-      }
-    }
-    return 301; // Emergency default fallback if somehow missed
-  }
-
   function getDENRCategory(aqi) {
-    if (aqi === null) return null;
+    if (aqi === null || isNaN(aqi)) return null;
     if (aqi <= 50)  return {
       key: 'good',
       status: 'Good',
@@ -811,40 +701,21 @@
         `https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLhAH0dXaoHYko7OJ1-Ji-j2PA9D-9A1X1K0hNc2wyUev92IcnJwuD2eBKugqi1PiMbZwnVc7MZfvuwtKCrMmPa67hNrUm-0q8S1CGpXXjcV8z86-56SKBKCb7jthHm1Oc9IigHmZzitbmVyap_D1bKBNk9nxUTKbzwKUJBzgBOzX925-u9CI476YP-DYrbTBaT3DXLlEf2AGHws59dvSAwdaSSfpTpNxfw9tQEW7XudtSCgTs26IVOsep3RrHLO5H0MBpmZFZJ0hhQ_hBoTVdmsjMuQWPDZAsE98Lf_&lib=MTbhs9Zv5KTG9ImKpSDDDPCIObk80Qa1W&t=${ts}`
       );
       const data = await response.json();
-      console.log('Full API Response:', JSON.stringify(data, null, 2));
-
       const rawData = data.raw_data?.data || {};
 
-      let pm25Conc = null;
-      let pm10Conc = null;
+      let pm25AQI = null;
+      let pm10AQI = null;
 
+      // Extract the pre-computed AQI directly from the API response
       if (eventModeActive) {
-        pm25Conc = parseFloat(rawData.pm25_aqi_combo?.real_time_concentration?.value) || null;
-        pm10Conc  = parseFloat(rawData.pm10_aqi_combo?.real_time_concentration?.value)  || null;
-
-        if (pm25Conc === null) {
-          const rt = parseFloat(rawData.pm25_aqi_combo?.real_time_aqi?.value);
-          if (!isNaN(rt)) { pm25Conc = rt; console.warn('PM2.5: using pre-computed AQI as concentration proxy'); }
-        }
-        if (pm10Conc === null) {
-          const rt = parseFloat(rawData.pm10_aqi_combo?.real_time_aqi?.value);
-          if (!isNaN(rt)) { pm10Conc = rt; console.warn('PM10: using pre-computed AQI as concentration proxy'); }
-        }
+        pm25AQI = parseFloat(rawData.pm25_aqi_combo?.real_time_aqi?.value) || null;
+        pm10AQI = parseFloat(rawData.pm10_aqi_combo?.real_time_aqi?.value) || null;
       } else {
-        pm25Conc = parseFloat(rawData.pm25_aqi_combo?.['24_hours_concentration']?.value) || null;
-        pm10Conc  = parseFloat(rawData.pm10_aqi_combo?.['24_hours_concentration']?.value)  || null;
-
-        if (pm25Conc === null) {
-          const v = parseFloat(rawData.pm25_aqi_combo?.['24_hours_aqi']?.value);
-          if (!isNaN(v)) { pm25Conc = v; console.warn('PM2.5 24h: using pre-computed AQI as concentration proxy'); }
-        }
-        if (pm10Conc === null) {
-          const v = parseFloat(rawData.pm10_aqi_combo?.['24_hours_aqi']?.value);
-          if (!isNaN(v)) { pm10Conc = v; console.warn('PM10 24h: using pre-computed AQI as concentration proxy'); }
-        }
+        pm25AQI = parseFloat(rawData.pm25_aqi_combo?.['24_hours_aqi']?.value) || null;
+        pm10AQI = parseFloat(rawData.pm10_aqi_combo?.['24_hours_aqi']?.value) || null;
       }
 
-      console.log(`Mode: ${eventModeActive ? 'Rapid' : '24h'} | PM2.5 conc: ${pm25Conc} | PM10 conc: ${pm10Conc}`);
+      console.log(`Mode: ${eventModeActive ? 'Rapid' : '24h'} | PM2.5 AQI: ${pm25AQI} | PM10 AQI: ${pm10AQI}`);
 
       const tempF = parseFloat(rawData.outdoor?.temperature?.value) || null;
       const tempC  = tempF !== null ? (tempF - 32) * 5 / 9 : null;
@@ -857,8 +728,8 @@
       const windDir      = parseFloat(rawData.wind?.wind_direction?.value) || null;
 
       return {
-        pm25Conc,
-        pm10Conc,
+        pm25AQI,
+        pm10AQI,
         temperature:  tempC   ? Math.round(tempC * 10) / 10 : null,
         humidity,
         pressure:     pressureHPa ? Math.round(pressureHPa) : null,
@@ -868,7 +739,7 @@
       };
     } catch (err) {
       console.error('Failed to fetch sensor data:', err);
-      return { pm25Conc: null, pm10Conc: null, temperature: null, humidity: null,
+      return { pm25AQI: null, pm10AQI: null, temperature: null, humidity: null,
                pressure: null, wind: null, windDirection: null, timestamp: new Date() };
     }
   }
@@ -886,10 +757,10 @@
     document.getElementById('update-time').textContent = timeStr;
     document.getElementById('update-date').textContent = dateStr;
 
-    const pm25AQI = calcDENRAQI(data.pm25Conc, PM25_BREAKPOINTS);
-    const pm10AQI = calcDENRAQI(data.pm10Conc,  PM10_BREAKPOINTS);
+    const pm25AQI = data.pm25AQI;
+    const pm10AQI = data.pm10AQI;
 
-    const validAQIs = [pm25AQI, pm10AQI].filter(v => v !== null);
+    const validAQIs = [pm25AQI, pm10AQI].filter(v => v !== null && !isNaN(v));
     const overallAQI = validAQIs.length > 0 ? Math.max(...validAQIs) : null;
 
     const mainCard = document.getElementById('main-aqi-card');
@@ -917,16 +788,14 @@
     if (pm25AQI !== null) {
       const cat = getDENRCategory(pm25AQI);
       document.getElementById('pm25-aqi').textContent  = Math.round(pm25AQI);
-      document.getElementById('pm25-conc').textContent = data.pm25Conc !== null ? data.pm25Conc.toFixed(1) : '--';
       const badge = document.getElementById('pm25-badge');
       badge.className = `px-2 py-1 rounded-full text-xs font-medium ${cat.badgeClass}`;
       badge.textContent = cat.status;
       const bar = document.getElementById('pm25-bar');
       bar.className   = `absolute top-0 left-0 h-full bg-gradient-to-r ${cat.barClass} rounded-full transition-all duration-500`;
-      bar.style.width = `${Math.min((pm25AQI / 400) * 100, 100)}%`; // Scaled against an upper bound of 400 for visualization
+      bar.style.width = `${Math.min((pm25AQI / 400) * 100, 100)}%`; 
     } else {
       document.getElementById('pm25-aqi').textContent  = '--';
-      document.getElementById('pm25-conc').textContent = '--';
       document.getElementById('pm25-badge').textContent = 'Unavailable';
       document.getElementById('pm25-bar').style.width   = '0%';
     }
@@ -934,7 +803,6 @@
     if (pm10AQI !== null) {
       const cat = getDENRCategory(pm10AQI);
       document.getElementById('pm10-aqi').textContent  = Math.round(pm10AQI);
-      document.getElementById('pm10-conc').textContent = data.pm10Conc !== null ? data.pm10Conc.toFixed(1) : '--';
       const badge = document.getElementById('pm10-badge');
       badge.className = `px-2 py-1 rounded-full text-xs font-medium ${cat.badgeClass}`;
       badge.textContent = cat.status;
@@ -943,7 +811,6 @@
       bar.style.width = `${Math.min((pm10AQI / 400) * 100, 100)}%`; 
     } else {
       document.getElementById('pm10-aqi').textContent  = '--';
-      document.getElementById('pm10-conc').textContent = '--';
       document.getElementById('pm10-badge').textContent = 'Unavailable';
       document.getElementById('pm10-bar').style.width   = '0%';
     }
@@ -991,7 +858,7 @@
     if (dataRefreshInterval) clearInterval(dataRefreshInterval);
     dataRefreshInterval = setInterval(async () => {
       const fresh = await fetchSensorData();
-      if (fresh.pm25Conc !== null || fresh.pm10Conc !== null) {
+      if (fresh.pm25AQI !== null || fresh.pm10AQI !== null) {
         const newTs = fresh.timestamp.getTime();
         if (lastDataTimestamp === null || newTs > lastDataTimestamp) {
           lastSuccessfulDataTime = Date.now();
@@ -1013,7 +880,7 @@
     if (eventModeActive) {
       btn.style.background = 'rgb(16,185,129)';
       dot.style.left       = 'calc(100% - 1.25rem)';
-      aqiLbl.textContent   = 'Realtime Air Quality Index (DENR AQI)';
+      aqiLbl.textContent   = 'Realtime Air Quality Index';
     } else {
       btn.style.background = 'rgb(55,65,81)';
       dot.style.left       = '0.25rem';
@@ -1021,7 +888,7 @@
     }
 
     const fresh = await fetchSensorData();
-    if (fresh.pm25Conc !== null || fresh.pm10Conc !== null) {
+    if (fresh.pm25AQI !== null || fresh.pm10AQI !== null) {
       lastSuccessfulDataTime = Date.now();
       lastDataTimestamp = fresh.timestamp.getTime();
       updateStatusIndicator(true);
@@ -1032,7 +899,7 @@
   async function init() {
     applyConfig(config);
     const initial = await fetchSensorData();
-    if (initial.pm25Conc !== null || initial.pm10Conc !== null) {
+    if (initial.pm25AQI !== null || initial.pm10AQI !== null) {
       lastSuccessfulDataTime = Date.now();
       lastDataTimestamp = initial.timestamp.getTime();
       updateStatusIndicator(true);
